@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Umer Fazal – Security Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f5f7;--surface:#fff;--ink:#10202c;--muted:#51636f;--line:#d5dde3;--accent:#0b6b8a;--on:#fff;--c:#b3261e;--h:#d4601f;--m:#c99413;--l:#4a8667;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a22;--surface:#16252f;--ink:#e8eef2;--muted:#9bb0bc;--line:#28404e;--accent:#52b6d6;--on:#06222c;--c:#ef6b62;--h:#f08a4b;--m:#e3b43f;--l:#6cc39a}}
+:root[data-theme="dark"]{--bg:#0f1a22;--surface:#16252f;--ink:#e8eef2;--muted:#9bb0bc;--line:#28404e;--accent:#52b6d6;--on:#06222c;--c:#ef6b62;--h:#f08a4b;--m:#e3b43f;--l:#6cc39a}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 "IBM Plex Sans",system-ui,sans-serif}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 clamp(1.1rem,5vw,2.5rem)}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15;margin:0}
+nav{display:flex;flex-wrap:wrap;gap:.3rem 1.4rem;padding:1.2rem 0;font-size:.95rem}
+nav a{color:var(--muted);text-decoration:none}nav a:hover{color:var(--accent);text-decoration:underline}
+nav .me{margin-right:auto;color:var(--ink);font-weight:500}
+header{padding:clamp(2rem,7vw,4.5rem) 0 1rem}
+h1{font-size:clamp(2.3rem,7vw,4rem);font-weight:700;letter-spacing:-.025em;max-width:16ch}
+.lede{max-width:58ch;color:var(--muted);font-size:1.12rem;margin:1.2rem 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.6rem 0 0}
+.btn{display:inline-block;padding:.6rem 1.2rem;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:var(--on);font-weight:500;text-decoration:none}
+.btn.alt{background:transparent;color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:2.2rem 0 0}
+.stats div{background:var(--surface);padding:1rem 1.1rem}
+.stats b{display:block;font:700 1.9rem/1.1 "Bricolage Grotesque",sans-serif}
+.stats span{color:var(--muted);font-size:.9rem}
+.bar{display:flex;height:.6rem;gap:3px;margin:2rem 0 0;border-radius:4px;overflow:hidden}
+.bar i{display:block;transform-origin:left;animation:grow .9s cubic-bezier(.2,.7,.2,1) both}
+.bar i:nth-child(1){flex:13;background:var(--c)}.bar i:nth-child(2){flex:8;background:var(--h)}.bar i:nth-child(3){flex:6;background:var(--m)}.bar i:nth-child(4){flex:2;background:var(--l)}
+@keyframes grow{from{transform:scaleX(0)}}
+.cap{font-size:.85rem;color:var(--muted);margin:.5rem 0 0}
+section{padding:3rem 0 0}
+section>h2{font-size:1.7rem;font-weight:700;margin:0 0 1.2rem;padding-top:1.4rem;border-top:1px solid var(--line)}
+.sub{color:var(--muted);max-width:62ch;margin:-.6rem 0 1.4rem}
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.3rem}
+.filters button{font:inherit;font-size:.92rem;padding:.35rem .95rem;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:1rem;align-items:start}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.2rem}
+.card[hidden]{display:none}
+.card h3{font-size:1.1rem;font-weight:500}
+.card .t{color:var(--muted);font-size:.85rem;margin:.15rem 0 .5rem}
+.card p{margin:0;font-size:.95rem}
+details{margin-top:.7rem}
+summary{cursor:pointer;color:var(--accent);font-size:.92rem;font-weight:500}
+details ul{margin:.6rem 0 0;padding-left:1.1rem;font-size:.92rem}details li{margin:.3rem 0}
+.tags{display:flex;flex-wrap:wrap;gap:.35rem;margin:.7rem 0 0;padding:0;list-style:none}
+.tags li{border:1px solid var(--line);border-radius:999px;padding:.05rem .65rem;font-size:.8rem;color:var(--muted)}
+.tl{margin:0;padding:0;list-style:none;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 1.8rem 1.5rem}
+.tl li::before{content:"";position:absolute;left:-7px;top:.5rem;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.tl h3{font-size:1.1rem;font-weight:500}
+.tl .meta{color:var(--muted);font-size:.9rem;margin:.1rem 0 .4rem}
+.tl ul{margin:.3rem 0 0;padding-left:1.1rem}.tl li li{padding:0;margin:.25rem 0}.tl li li::before{display:none}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1.6rem 2.4rem}
+dl{margin:0}dt{font-weight:500;margin-top:1rem}dt:first-child{margin-top:0}dd{margin:.15rem 0 0;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:1rem}
+.steps div{border-left:3px solid var(--accent);padding:.1rem 0 .1rem .9rem}
+.steps h3{font-size:1rem;font-weight:500}.steps p{margin:.25rem 0 0;color:var(--muted);font-size:.93rem}
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.6rem clamp(1.1rem,4vw,2rem)}
+.contact p{max-width:56ch;margin:.5rem 0 1.2rem}
+footer{padding:2.5rem 0 3.5rem;color:var(--muted);font-size:.88rem}
+@media (prefers-reduced-motion:reduce){.bar i{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Sections"><a class="me" href="#top">Umer Fazal</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#approach">Approach</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+
+<header id="top">
+<h1>I find the way in, then write the fix.</h1>
+<p class="lede">Cyber security student at FAST-NUCES, graduating December 2026. I do penetration testing, vulnerability assessment and SOC monitoring, and I treat the report as part of the job. Based in Karachi, Pakistan.</p>
+<div class="cta"><a class="btn" href="#contact">Get in touch</a><a class="btn alt" href="#work">See my work</a></div>
+<div class="stats">
+<div><b>29</b><span>findings triaged in one VAPT engagement</span></div>
+<div><b>5</b><span>formal VA/VAPT reports with CVSS scoring</span></div>
+<div><b>25+</b><span>web vulnerabilities found across 8+ apps</span></div>
+<div><b>3</b><span>internships in security, 2026 and 2025</span></div>
+</div>
+<div class="bar" role="img" aria-label="Severity split of the 29 findings: 13 Critical, 8 High, 6 Medium, 2 Low"><i></i><i></i><i></i><i></i></div>
+<p class="cap">National CERT Pakistan engagement: 13 Critical, 8 High, 6 Medium, 2 Low.</p>
+</header>
+
+<main>
+<section id="work">
+<h2>Selected work</h2>
+<p class="sub">Filter by area. Open a card for the details.</p>
+<div class="filters" id="filters" role="group" aria-label="Filter projects">
+<button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="off">Offensive</button><button aria-pressed="false" data-f="def">Defensive</button><button aria-pressed="false" data-f="for">Forensics</button><button aria-pressed="false" data-f="dev">Development</button>
+</div>
+<div class="grid" id="grid">
+<article class="card" data-c="off dev"><h3>ReconSentinel</h3><p class="t">Open source · 2026</p><p>An automated 10-phase reconnaissance pipeline, built during my National CERT work.</p>
+<details><summary>Details</summary><ul><li>Automates a repeatable recon workflow from start to finish.</li><li>Released as open source on GitHub.</li></ul></details>
+<ul class="tags"><li>Recon</li><li>Automation</li><li>OSINT</li></ul></article>
+
+<article class="card" data-c="off"><h3>Full VAPT engagement</h3><p class="t">National CERT Pakistan · 2026</p><p>Led a vulnerability assessment and penetration test that produced 29 triaged findings.</p>
+<details><summary>Details</summary><ul><li>13 Critical, 8 High, 6 Medium, 2 Low.</li><li>Findings formed 3 independent root-compromise paths.</li><li>Ran a 9-stage OSINT engagement with Recon-ng, Maltego and Shodan, uncovering a subdomain takeover risk and DNS and email misconfigurations.</li><li>Simulated client-side attacks with msfvenom, then hardened Linux and Windows hosts using Nmap and OpenVAS.</li><li>Delivered 5 formal reports with CVSS scores and remediation roadmaps.</li></ul></details>
+<ul class="tags"><li>Nmap</li><li>OpenVAS</li><li>Metasploit</li><li>CVSS</li></ul></article>
+
+<article class="card" data-c="off dev"><h3>AI-Powered Security Scanner</h3><p class="t">Python · 2025</p><p>Static code analysis that uses Gemini 2.5 Flash to find vulnerabilities and report them.</p>
+<details><summary>Details</summary><ul><li>Detects SQL injection, command injection, hardcoded secrets and weak hashing.</li><li>Covers 10+ vulnerability categories aligned to OWASP Top 10 2025.</li><li>Generates a dark-themed HTML report with colour-coded terminal output.</li></ul></details>
+<ul class="tags"><li>Python</li><li>Gemini 2.5 Flash</li><li>SAST</li></ul></article>
+
+<article class="card" data-c="off"><h3>Web application security testing</h3><p class="t">OWASP ZAP, Snyk · 2025</p><p>Assessed 8+ web apps and found 25+ vulnerabilities.</p>
+<details><summary>Details</summary><ul><li>Found SQL injection, XSS and CSRF using OWASP Top 10 methodology.</li><li>Combined SAST and DAST tooling.</li></ul></details>
+<ul class="tags"><li>OWASP ZAP</li><li>Snyk</li><li>Burp Suite</li></ul></article>
+
+<article class="card" data-c="off for"><h3>Advanced keylogger (educational)</h3><p class="t">Python · 2025</p><p>A malware simulation built to study spyware behaviour and forensic recovery.</p>
+<details><summary>Details</summary><ul><li>Captures keystrokes, clipboard, screenshots and the active window on Windows.</li><li>Archives logs with AES-128 and a randomised IV.</li><li>Includes a separate decryption utility for forensic recovery.</li><li>Documented 12+ mitigation strategies during the Arch Technologies internship.</li></ul></details>
+<ul class="tags"><li>Python</li><li>AES-128</li><li>Malware analysis</li></ul></article>
+
+<article class="card" data-c="def"><h3>SOC monitoring and automation</h3><p class="t">ITSOLERA · 2026</p><p>Malware traffic investigation, IoC extraction and Wazuh–n8n automation.</p>
+<details><summary>Details</summary><ul><li>Threat intelligence enrichment of extracted IoCs.</li><li>ELK and Wazuh monitoring, endpoint security and firewall integration.</li><li>Malware analysis and incident response.</li></ul></details>
+<ul class="tags"><li>Wazuh</li><li>ELK</li><li>n8n</li></ul></article>
+
+<article class="card" data-c="def"><h3>Wazuh SIEM deployment</h3><p class="t">Home lab · 2024</p><p>Log collection, alerting and rule-based threat detection across Windows and Linux endpoints.</p>
+<ul class="tags"><li>Wazuh</li><li>Incident response</li></ul></article>
+
+<article class="card" data-c="def dev"><h3>Real-time network sniffer</h3><p class="t">Python · Arch Technologies · 2025</p><p>Captures and analyses live traffic, flagging 15+ anomalies across 10,000+ daily packets.</p>
+<ul class="tags"><li>Python</li><li>Traffic analysis</li></ul></article>
+
+<article class="card" data-c="for"><h3>Forensic data recovery</h3><p class="t">Arch Technologies · 2025</p><p>Recovered 85% of deleted files from FAT32 and NTFS file systems.</p>
+<details><summary>Details</summary><ul><li>Documented chain of custody throughout.</li><li>Tools: Autopsy and FTK Imager.</li></ul></details>
+<ul class="tags"><li>Autopsy</li><li>FTK Imager</li></ul></article>
+
+<article class="card" data-c="dev"><h3>Credit card fraud detection</h3><p class="t">Machine learning · 2025</p><p>A model that reached 94% accuracy on 50,000+ transactions.</p>
+<ul class="tags"><li>Python</li><li>ML</li></ul></article>
+
+<article class="card" data-c="dev"><h3>Pharmacy Management System</h3><p class="t">Secure development · 2025</p><p>A web system built with OWASP Top 10 controls, input validation and role-based access control, running on Linux.</p>
+<ul class="tags"><li>RBAC</li><li>Secure coding</li></ul></article>
+</div>
+</section>
+
+<section id="experience">
+<h2>Experience</h2>
+<ol class="tl">
+<li><h3>Vulnerability Assessment and Research, National CERT Pakistan</h3><p class="meta">Islamabad · July–August 2026</p>
+<ul><li>Led a full VAPT engagement and triaged 29 findings across 3 root-compromise paths.</li><li>Ran a 9-stage OSINT engagement and wrote 5 formal VA/VAPT reports.</li><li>Built and open-sourced ReconSentinel.</li></ul></li>
+<li><h3>SOC Intern, ITSOLERA</h3><p class="meta">Islamabad · June–August 2026</p>
+<ul><li>Malware traffic investigation, IoC extraction and threat intelligence enrichment.</li><li>ELK and Wazuh monitoring, endpoint security, firewall integration and incident response.</li></ul></li>
+<li><h3>Cyber Security Intern, Arch Technologies</h3><p class="meta">Summer 2025</p>
+<ul><li>Built a network sniffer, a fraud detection model and forensic recovery workflows.</li><li>Simulated keylogging attacks to study spyware persistence and mitigation.</li></ul></li>
+</ol>
+</section>
+
+<section id="approach">
+<h2>How I work</h2>
+<p class="sub">The shape of my engagements, from the National CERT work and my course projects.</p>
+<div class="steps">
+<div><h3>Map the surface</h3><p>OSINT and recon first, using PTES as the frame.</p></div>
+<div><h3>Test and exploit</h3><p>OWASP Top 10 for web, plus network and host testing.</p></div>
+<div><h3>Rate by impact</h3><p>Every finding gets a CVSS score so fixes can be ordered.</p></div>
+<div><h3>Report the fix</h3><p>Remediation roadmaps and documented evidence, not just a list of bugs.</p></div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills and credentials</h2>
+<div class="two">
+<dl>
+<dt>Offensive security</dt><dd>Penetration testing, vulnerability assessment, exploitation, privilege escalation, Active Directory, web app security, OSINT</dd>
+<dt>Defensive and forensics</dt><dd>SOC monitoring, incident response, malware analysis, digital forensics, threat intelligence, IDS/IPS</dd>
+<dt>Tools</dt><dd>Nmap, Burp Suite, Metasploit, Nessus, OpenVAS, Wireshark, OWASP ZAP, Wazuh, Splunk, ELK, Suricata, Autopsy, FTK Imager, Ghidra, Maltego, Shodan, Docker</dd>
+<dt>Languages and standards</dt><dd>Python, C, C++, SQL, Bash · OWASP Top 10, PTES, PCI-DSS, GDPR, CVSS</dd>
+</dl>
+<dl>
+<dt>BS Cyber Security</dt><dd>FAST-NUCES, Karachi · August 2022 to December 2026</dd>
+<dt>Certified Penetration Testing Specialist (CPTS)</dt><dd>Hack The Box · in progress, expected 2026</dd>
+<dt>PreSecurity</dt><dd>Foundational cyber security certification</dd>
+<dt>Cybersecurity Job Simulation</dt><dd>Mastercard</dd>
+</dl>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<div class="contact">
+<h3>Looking for an intern or entry-level security hire?</h3>
+<p>I’m open to roles in penetration testing, vulnerability assessment and SOC work. Email is the fastest way to reach me.</p>
+<div class="cta" style="margin:0"><a class="btn" href="mailto:umerfazal2004@gmail.com">umerfazal2004@gmail.com</a><a class="btn alt" href="https://www.linkedin.com/in/umer-fazal">LinkedIn</a><a class="btn alt" href="https://github.com/Umer-Fazal">GitHub</a></div>
+</div>
+</section>
+</main>
+<footer>© 2026 Muhammad Umer Fazal · Karachi, Pakistan</footer>
+</div>
+<script>
+(function(){
+var bs=document.querySelectorAll('#filters button'),cs=document.querySelectorAll('#grid .card');
+bs.forEach(function(b){b.addEventListener('click',function(){
+var f=b.getAttribute('data-f');
+bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+cs.forEach(function(c){c.hidden=!(f==='all'||c.getAttribute('data-c').split(' ').indexOf(f)>-1)});
+})});
+})();
+</script>
+</body>
+</html>
